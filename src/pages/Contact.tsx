@@ -2,9 +2,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QRCodeSVG } from "qrcode.react";
 import { Linkedin, Github, Mail, Phone } from "lucide-react";
-import contactName from "@/assets/contact-name.png";
-import contactEmail from "@/assets/contact-email.png";
-import contactPhone from "@/assets/contact-phone.png";
+import profilePhoto from "@/assets/profile-photo.jpg";
 
 export default function Contact() {
   // vCard format for contact QR code
@@ -39,9 +37,15 @@ END:VCARD`;
         <section className="py-16 md:py-24">
           <div className="container px-4 md:px-8">
             <div className="max-w-4xl mx-auto">
-              {/* Name Card */}
+              {/* Profile Card */}
               <div className="bg-card border border-border rounded-2xl p-8 shadow-sm mb-8 text-center">
-                <img src={contactName} alt="Shahzada Hatim Mushtaq" className="mx-auto max-w-full h-auto" />
+                <img 
+                  src={profilePhoto} 
+                  alt="Shahzada Hatim Mushtaq" 
+                  className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-primary/20"
+                />
+                <h2 className="text-3xl font-bold mb-2">Shahzada Hatim Mushtaq</h2>
+                <p className="text-muted-foreground">AI Consultancy & Solutions</p>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
@@ -49,29 +53,39 @@ END:VCARD`;
                 <div className="space-y-6">
                   {/* Email */}
                   <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-3">
                       <div className="p-3 rounded-lg bg-primary/10">
                         <Mail className="h-6 w-6 text-primary" />
                       </div>
                       <h3 className="font-semibold text-lg">Email</h3>
                     </div>
-                    <img src={contactEmail} alt="Email" className="w-full h-auto" />
+                    <a 
+                      href="mailto:geoaxis@gmail.com" 
+                      className="text-foreground hover:text-primary transition-colors"
+                    >
+                      geoaxis@gmail.com
+                    </a>
                   </div>
 
                   {/* Phone */}
                   <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-3">
                       <div className="p-3 rounded-lg bg-primary/10">
                         <Phone className="h-6 w-6 text-primary" />
                       </div>
                       <h3 className="font-semibold text-lg">Phone</h3>
                     </div>
-                    <img src={contactPhone} alt="Phone" className="w-full h-auto" />
+                    <a 
+                      href="tel:+46763275401" 
+                      className="text-foreground hover:text-primary transition-colors"
+                    >
+                      +46 76 327 5401
+                    </a>
                   </div>
 
                   {/* LinkedIn */}
                   <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-3">
                       <div className="p-3 rounded-lg bg-primary/10">
                         <Linkedin className="h-6 w-6 text-primary" />
                       </div>
@@ -81,7 +95,7 @@ END:VCARD`;
                       href="https://www.linkedin.com/in/shahzadahatim" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-primary hover:underline break-all"
+                      className="text-foreground hover:text-primary transition-colors break-all"
                     >
                       linkedin.com/in/shahzadahatim
                     </a>
@@ -89,7 +103,7 @@ END:VCARD`;
 
                   {/* GitHub */}
                   <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-4">
+                    <div className="flex items-center gap-3 mb-3">
                       <div className="p-3 rounded-lg bg-primary/10">
                         <Github className="h-6 w-6 text-primary" />
                       </div>
@@ -99,7 +113,7 @@ END:VCARD`;
                       href="https://github.com/geoaxis" 
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="text-primary hover:underline"
+                      className="text-foreground hover:text-primary transition-colors"
                     >
                       github.com/geoaxis
                     </a>
