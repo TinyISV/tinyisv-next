@@ -51,18 +51,25 @@ END:VCARD`;
           <div className="container px-4 md:px-8">
             <div className="max-w-4xl mx-auto">
               {/* Profile Card */}
-              <div className="bg-card border border-border rounded-2xl p-8 shadow-sm mb-8 text-center">
-                <img 
-                  src={profilePhoto} 
-                  alt="Shahzada Hatim Mushtaq" 
-                  className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-primary/20"
-                />
-                <h2 className="text-3xl font-bold mb-2">Shahzada Hatim Mushtaq</h2>
-                <p className="text-muted-foreground mb-4">AI Consultancy & Solutions</p>
-                <Button onClick={handleDownloadVCard} className="gap-2">
-                  <Download className="h-4 w-4" />
-                  Add to Contacts
-                </Button>
+              <div className="bg-card border border-border rounded-2xl p-8 shadow-sm mb-8">
+                <div className="flex flex-col md:flex-row gap-6 items-center md:items-start">
+                  <img 
+                    src={profilePhoto} 
+                    alt="Shahzada Hatim Mushtaq" 
+                    className="w-32 h-32 rounded-full border-4 border-primary/20 flex-shrink-0"
+                  />
+                  <div className="flex-1 text-center md:text-left">
+                    <h2 className="text-2xl font-bold mb-3">Shahzada Hatim Mushtaq</h2>
+                    <p className="text-muted-foreground mb-4 leading-relaxed">
+                      A hands-on software engineering leader who loves learning new technologies. 
+                      Fascinated with AI-assisted systems and exploring how they can transform the way we build and deliver software.
+                    </p>
+                    <Button onClick={handleDownloadVCard} className="gap-2">
+                      <Download className="h-4 w-4" />
+                      Add to Contacts
+                    </Button>
+                  </div>
+                </div>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
