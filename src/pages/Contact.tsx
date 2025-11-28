@@ -1,6 +1,6 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { QRCodeSVG } from "qrcode.react";
+import { ContactText } from "@/components/ContactText";
 import { Linkedin, Github, Mail, Phone, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
@@ -77,36 +77,29 @@ END:VCARD`;
                 <div className="space-y-6">
                   {/* Email */}
                   <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 rounded-lg bg-primary/10">
                         <Mail className="h-6 w-6 text-primary" />
                       </div>
                       <h3 className="font-semibold text-lg">Email</h3>
                     </div>
-                    <a 
-                      href="mailto:geoaxis@gmail.com" 
-                      className="text-foreground hover:text-primary transition-colors"
-                    >
-                      geoaxis@gmail.com
-                    </a>
+                    <ContactText text="geoaxis@gmail.com" />
                   </div>
 
                   {/* Phone */}
                   <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <div className="flex items-center gap-3 mb-3">
+                    <div className="flex items-center gap-3 mb-4">
                       <div className="p-3 rounded-lg bg-primary/10">
                         <Phone className="h-6 w-6 text-primary" />
                       </div>
                       <h3 className="font-semibold text-lg">Phone</h3>
                     </div>
-                    <a 
-                      href="tel:+46763275401" 
-                      className="text-foreground hover:text-primary transition-colors"
-                    >
-                      +46 76 327 5401
-                    </a>
+                    <ContactText text="+46 76 327 5401" />
                   </div>
+                </div>
 
+                {/* Social Links */}
+                <div className="space-y-6">
                   {/* LinkedIn */}
                   <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
                     <div className="flex items-center gap-3 mb-3">
@@ -141,57 +134,6 @@ END:VCARD`;
                     >
                       github.com/geoaxis
                     </a>
-                  </div>
-                </div>
-
-                {/* QR Codes */}
-                <div className="space-y-6">
-                  {/* vCard QR Code */}
-                  <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <h3 className="font-semibold text-lg mb-4 text-center">Save Contact</h3>
-                    <div className="flex justify-center">
-                      <QRCodeSVG 
-                        value={vCardData} 
-                        size={200}
-                        level="H"
-                        className="border-4 border-background p-2 rounded-lg"
-                      />
-                    </div>
-                    <p className="text-sm text-muted-foreground text-center mt-4">
-                      Scan to add to contacts
-                    </p>
-                  </div>
-
-                  {/* LinkedIn QR Code */}
-                  <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <h3 className="font-semibold text-lg mb-4 text-center">LinkedIn Profile</h3>
-                    <div className="flex justify-center">
-                      <QRCodeSVG 
-                        value="https://www.linkedin.com/in/shahzadahatim" 
-                        size={200}
-                        level="H"
-                        className="border-4 border-background p-2 rounded-lg"
-                      />
-                    </div>
-                    <p className="text-sm text-muted-foreground text-center mt-4">
-                      Scan to connect on LinkedIn
-                    </p>
-                  </div>
-
-                  {/* GitHub QR Code */}
-                  <div className="bg-card border border-border rounded-2xl p-6 shadow-sm">
-                    <h3 className="font-semibold text-lg mb-4 text-center">GitHub Profile</h3>
-                    <div className="flex justify-center">
-                      <QRCodeSVG 
-                        value="https://github.com/geoaxis" 
-                        size={200}
-                        level="H"
-                        className="border-4 border-background p-2 rounded-lg"
-                      />
-                    </div>
-                    <p className="text-sm text-muted-foreground text-center mt-4">
-                      Scan to follow on GitHub
-                    </p>
                   </div>
                 </div>
               </div>
