@@ -1,7 +1,8 @@
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QRCodeSVG } from "qrcode.react";
-import { Linkedin, Github, Mail, Phone } from "lucide-react";
+import { Linkedin, Github, Mail, Phone, Download } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import profilePhoto from "@/assets/profile-photo.jpg";
 
 export default function Contact() {
@@ -13,6 +14,18 @@ EMAIL:geoaxis@gmail.com
 TEL:+46763275401
 URL:https://www.linkedin.com/in/shahzadahatim
 END:VCARD`;
+
+  const handleDownloadVCard = () => {
+    const blob = new Blob([vCardData], { type: 'text/vcard' });
+    const url = window.URL.createObjectURL(blob);
+    const link = document.createElement('a');
+    link.href = url;
+    link.download = 'shahzada-hatim-mushtaq.vcf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    window.URL.revokeObjectURL(url);
+  };
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -45,7 +58,11 @@ END:VCARD`;
                   className="w-32 h-32 rounded-full mx-auto mb-6 border-4 border-primary/20"
                 />
                 <h2 className="text-3xl font-bold mb-2">Shahzada Hatim Mushtaq</h2>
-                <p className="text-muted-foreground">AI Consultancy & Solutions</p>
+                <p className="text-muted-foreground mb-4">AI Consultancy & Solutions</p>
+                <Button onClick={handleDownloadVCard} className="gap-2">
+                  <Download className="h-4 w-4" />
+                  Add to Contacts
+                </Button>
               </div>
 
               <div className="grid md:grid-cols-2 gap-8">
